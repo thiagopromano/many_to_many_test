@@ -10,8 +10,6 @@ defmodule ManyToManyTest.Application do
     children = [
       # Start the Ecto repository
       ManyToManyTest.Repo,
-      # Start the PubSub system
-      {Phoenix.PubSub, name: ManyToManyTest.PubSub}
       # Start a worker by calling: ManyToManyTest.Worker.start_link(arg)
       # {ManyToManyTest.Worker, arg}
     ]
