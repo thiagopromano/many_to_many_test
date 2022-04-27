@@ -10,12 +10,8 @@ defmodule ManyToManyTest.Application do
     children = [
       # Start the Ecto repository
       ManyToManyTest.Repo,
-      # Start the Telemetry supervisor
-      ManyToManyTestWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: ManyToManyTest.PubSub},
-      # Start the Endpoint (http/https)
-      ManyToManyTestWeb.Endpoint
+      {Phoenix.PubSub, name: ManyToManyTest.PubSub}
       # Start a worker by calling: ManyToManyTest.Worker.start_link(arg)
       # {ManyToManyTest.Worker, arg}
     ]
@@ -28,9 +24,4 @@ defmodule ManyToManyTest.Application do
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
-  @impl true
-  def config_change(changed, _new, removed) do
-    ManyToManyTestWeb.Endpoint.config_change(changed, removed)
-    :ok
-  end
 end
